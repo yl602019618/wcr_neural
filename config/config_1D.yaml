@@ -1,0 +1,56 @@
+seed: 101
+
+Project:
+  name: 'WCR1d'
+  checkpoint: False
+  save_top_k: 1
+  erase: True
+  devices: 1
+  accelerator: 'gpu'
+  PATH: /home/bcl/zhijunzeng/WCR_Neural/WCR_new/save_files
+  save_dir: 1d
+  
+
+
+data:
+  dt: 0.001
+  sample: 20000
+  dim: 1
+  nt: 11
+  T: 1
+  plot_path: '/home/bcl/zhijunzeng/WCRNeural_official/result1D'
+  model: pdcd
+
+train:
+  sigma_init: 0.3
+  gauss_number: 300
+  sampling: SDE
+  LMM: LMM_3
+  sgd_ratio: 0.5
+  epochs: 1000
+  mean_samp_way: SDE_dist
+  var_samp_way: 'dist'
+  error_type: uniform1d
+  plot_type: 1d
+  samp_coef: 
+    lhs_ratio: 0.7
+    variance_min: 0.3
+    variance_max: 0.7
+
+ 
+  
+
+NN:
+  dim: 1
+  width: 100
+  depth: 5
+  activation: GeLU
+  lr: 0.01
+  gamma: 0.5
+  step_size: 200
+  weight_decay: 0.00001
+  iter: 2000
+
+
+
+  
